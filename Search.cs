@@ -10,7 +10,7 @@ namespace algorithms
         of what part of the array you have to search through. At the beginning,
         this is the entire array:
         */
-        public int? BinarySearch(int [] list , int element)
+        public int? BinarySearch(int [] list , int element)//tiime is O(log(n))
         {
             int low = 0;//first element in list
             int high = list.Length - 1;//last element in list
@@ -33,6 +33,18 @@ namespace algorithms
                     low = mid +1;
                 }
                 
+            }
+            Console.WriteLine("Not Found");
+            return null;
+        }
+        public int? LinearSearch(int [] list,int element)// time is O(n)
+        {
+            for(int i=0;i<list.Length;i++)
+            {
+                if(element == list[i])
+                {
+                    return i;
+                }
             }
             Console.WriteLine("Not Found");
             return null;
